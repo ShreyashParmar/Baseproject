@@ -1,0 +1,24 @@
+<div class="image">
+<div>
+    <img src="../../assets/images/login-background.jpg" />
+</div>
+<div class="center">
+    <h1>Login</h1>
+    <form method="post">
+        <div class="txt_field">
+            <span></span>
+            <label>Username</label>
+            <input type="text" name="Username" [(ngModel)]="this.login.username" required />
+        </div>
+        <div class="txt_field">
+            <span></span>
+            <label>Password</label>
+            <input type="password" name="Password" [(ngModel)]="this.login.password" required />
+        </div>
+        <div class="pass">Forgot Password?</div>
+        <input type="submit" (click)="adminlogin()" value="Login" />
+        <!-- <div class="signup_link">Not a member? <a href="#">Signup</a></div> -->
+    </form>
+</div>
+
+</div>
