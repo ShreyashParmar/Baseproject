@@ -1,30 +1,26 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DashboradComponent } from './dashborad/dashborad.component';
 import { Routes, RouterModule } from '@angular/router';
-import { HeaderComponent } from "./header/header.component";
+import { OttComponent } from './ott/ott.component';
+import { SharedModule } from "../shared/shared.module";
 
 export const routes: Routes = [
 
   { 
-    path: 'dashboard', 
-     component: DashboradComponent
+    path: 'ott', 
+     component: OttComponent
   }, 
-  
     
 ];
 
 @NgModule({
   declarations: [
-    DashboradComponent,
-    HeaderComponent
+    OttComponent
   ],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
-],
-exports: [
-  HeaderComponent
+    SharedModule
 ]
 })
-export class SharedModule { }
+export class MasterModule { }

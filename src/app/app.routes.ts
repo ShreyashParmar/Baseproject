@@ -5,20 +5,31 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { AuthModule } from './auth/auth.module';
 import { SharedModule } from './shared/shared.module';
+import { MasterModule } from './master/master.module';
 
 
 
 export const routes: Routes = [
     // { path: '', redirectTo: '/login', pathMatch: 'full' }, // Default route
+    
     { 
       path: 'login', 
       loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule) 
-    }, 
+    },
+    // { 
+    //   path: 'login', 
+    //   loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule) 
+    // }, 
 
     { 
       path: 'main', 
       loadChildren: () => import('./shared/shared.module').then(m => m.SharedModule) 
     }, 
+
+    { 
+      path: 'master', 
+      loadChildren: () => import('./master/master.module').then(m => m.MasterModule) 
+    },
     // {path: 'login', component: LoginComponent},
     // { path: '**', redirectTo: '/login' }    
   ];

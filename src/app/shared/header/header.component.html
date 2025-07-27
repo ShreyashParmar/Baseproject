@@ -1,0 +1,48 @@
+<header class="header">
+    <div class="header-left">
+        <!-- <img src="../../../assets/images/logo/CipherVerse logo.png" alt="Company Logo" class="logo" /> -->
+        @if(!sidebarOpen){
+        <img src="../../../assets/images/logo/toggle-button.png" class="toggle-icon"
+        (click)="toggleSidebar()" alt="Company Logo" class="logo" />
+        }
+        @if(sidebarOpen){
+        <img  src="../../../assets/images/logo/toggle-button.png" class="toggle-icon" style="margin-left: 240px;"
+        (click)="toggleSidebar()" alt="Company Logo" class="logo" />
+        }
+    </div>
+
+    <div class="header-center">
+        <!-- <img src="../../../assets/images/logo/CipherVerse logo.png" alt="Company Logo" class="logo" /> -->
+        <h1 class="company-name">CipherVerse</h1>
+    </div>
+
+    <div class="header-right">
+        <div class="profile-menu">
+            <img src="../../../assets/images/logo/profile.png" alt="Profile Icon" class="profile-icon" (click)="toggleDropdown()" />
+            <div class="dropdown-menu" [ngClass]="{ 'show': dropdownOpen }">
+                <ul>
+                    <li><a href="#">Profile</a></li>
+                    <li><a href="#">Settings</a></li>
+                    <li><a href="#">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="sidebar" [ngClass]="{ 'sidebar-open': sidebarOpen }">
+        <ul>
+          <li>
+            <a href="/main/dashboard">
+                <!-- <img src="../../../assets/images/sidebar/dashboard-admin.png" alt="Dashbaord" class="sidebar-icon"> -->
+                Dashboard
+            </a>
+        </li>
+          <li>
+            <!-- <img src="../../../assets/images/sidebar/dashboard-admin.png" alt="Dashbaord" class="sidebar-icon"> -->
+            <a href="/master/ott">OTT</a>
+         </li>
+          <!-- <li><a href="#">Reviews</a></li>
+          <li><a href="#">Contact</a></li> -->
+        </ul>
+      </div>
+</header>

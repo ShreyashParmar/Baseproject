@@ -1,0 +1,173 @@
+/* Base styles for header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #324589;
+    color: white;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+/* Left section: Logo and company name */
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+
+.toggle-icon {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    margin-right: 10px;
+    position: relative; /* Position relative to move it along with the sidebar */
+    left: 0; /* Initial position */
+    transition: left 0.5s ease; /* Smooth transition for moving the icon */
+  }
+
+.logo {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    border-radius: 50px;
+}
+
+
+
+.company-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Right section: Profile menu */
+.header-right {
+    position: relative;
+}
+
+.profile-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Dropdown menu */
+.profile-menu {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 50px;
+    background-color: #444;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    z-index: 1001;
+}
+
+.dropdown-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 10px;
+}
+
+.dropdown-menu ul li {
+    padding: 8px 20px;
+}
+
+.dropdown-menu ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.dropdown-menu ul li:hover {
+    background-color: #555;
+}
+
+/* Show the dropdown when the class 'show' is applied */
+.dropdown-menu.show {
+    display: block;
+}
+
+.sidebar {
+    /* display: flex;
+    align-items: center;
+    justify-content: space-around; */
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: -250px; /* Hidden by default */
+    width: 250px;
+    height: 100%;
+    background-color: #ffe3e3;
+    transition: left 0.5s ease; /* 3-second animation for sliding in/out */
+    z-index: 999;
+    overflow-x: hidden;
+    padding-top: 60px;
+  }
+  
+  .sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    font-size: 19px;
+    font-family: revert-layer;
+  }
+  
+  .sidebar ul li {
+    padding: 10px 15px;
+    text-align: left;
+  }
+  
+  .sidebar ul li a {
+    color: rgb(1, 1, 1);
+    text-decoration: none;
+    font-weight: 600;
+  display: block;
+  font-size: 1.2rem;
+  }
+  
+  .sidebar ul li a:hover {
+    font-size: 21px;
+    color: #324589;
+  }
+
+  sidebar-icon {
+    display: block;
+    margin: 0 auto 10px; /* Centers the icon and adds margin below it */
+    width: 30px;
+    height: 30px;
+  }
+  
+  /* Open sidebar class */
+  .sidebar-open {
+    left: 0; /* Moves sidebar into view */
+  }
+  
+  /* When sidebar is open, move the toggle icon */
+  .sidebar-open + .header .header-left .toggle-icon {
+    left: 250px; /* Move toggle icon 250px to the right along with the sidebar */
+  }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .company-name {
+        font-size: 1.2rem;
+    }
+
+    .logo {
+        width: 35px;
+        height: 35px;
+    }
+
+    .profile-icon {
+        width: 35px;
+        height: 35px;
+    }
+}
